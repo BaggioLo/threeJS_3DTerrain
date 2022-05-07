@@ -14,11 +14,20 @@ const scene = new THREE.Scene()
 
 // Objects
 
-const geometry = new THREE.PlaneBufferGeometry(3, 3, 64, 64)
+const geometry = new THREE.PlaneBufferGeometry(3, 3, 64, 64);
+
 
 // Materials
 
+const material = new THREE.MeshStandardMaterial({
+    color: 'red'
+})
 
+const plane = new THREE.Mesh(geometry, material);
+scene.add(plane);
+plane.rotation.x = 181;
+
+gui.add(plane.rotation, 'x').min(0).max(600)
 
 // Mesh
 
@@ -62,7 +71,7 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
-camera.position.z = 2
+camera.position.z = 3
 scene.add(camera)
 
 // Controls
@@ -90,7 +99,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.y = .5 * elapsedTime
+    // sphere.rotation.y = .5 * elapsedTime
 
     // Update Orbital Controls
     // controls.update()

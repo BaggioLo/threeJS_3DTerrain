@@ -1,0 +1,35 @@
+these notes are for note taking during the tutorial
+
+Your 3d objects is how you define the shape of it, in the object section
+material is the skin of the object and the mesh is both of those things combined.
+
+There is a plain geometry and a buffer geometry, we will be using a geometry
+and creating it using the object to create the plane. The higher the numbers when 
+creating the Three.PlaneBufferGeometry(3, 3, 64, 64) the higher the quality and smoother it will be.
+
+A lot of work will go into the Materials section to add on the Objects to achieve the specific
+effects we are looking for.
+
+This Mesh will allow us to pass in the geometry and material
+as arguments and put them together to create our object into view.
+
+after we define the plane that meshes the geometry and material together,
+we have to add the constant plane to the scene by scene.add(plane). That way we can actually view it.
+
+The scene is the setting and we will be passing a lot of the objects onto the scene
+so we are able to create the 3d object. One of those things we pass is also the camera
+scene.add(camera) and that way we are able to view our object.
+
+We will be rotating the plane on the x-axis to set the foundation of how we will be adding everything.
+plane.rotation.x = 181;
+
+
+
+
+
+
+
+
+
+
+
