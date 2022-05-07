@@ -23,6 +23,8 @@ scene.add(camera) and that way we are able to view our object.
 We will be rotating the plane on the x-axis to set the foundation of how we will be adding everything.
 plane.rotation.x = 181;
 
+To add the texture to the object, we have to load the texture first as an image file 
+and then add it to MeshStandardMaterial with map: texture.
 
 
 

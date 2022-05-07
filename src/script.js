@@ -3,6 +3,12 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 
+// Texture loader
+const loader = new THREE.TextureLoader()
+const height = loader.load('height.png')
+const texture = loader.load('/texture.jpg')
+const alpha = loader.load('/alpha.png')
+
 // Debug
 const gui = new dat.GUI()
 
@@ -20,7 +26,8 @@ const geometry = new THREE.PlaneBufferGeometry(3, 3, 64, 64);
 // Materials
 
 const material = new THREE.MeshStandardMaterial({
-    color: 'gray'
+    color: 'gray',
+    map: texture
 })
 
 const plane = new THREE.Mesh(geometry, material);
