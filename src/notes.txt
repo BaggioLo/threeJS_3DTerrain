@@ -28,6 +28,8 @@ and then add it to MeshStandardMaterial with map: texture.
 
 we added a clouds image created from photoshop to the map to give it a little bit more depth.
 We did this with displacementMaps. The displacementScale will adjust how high or low the height is on the actual terrain itself.
+There is a blinder effect that naturally happens because of its rendering. To remove that we will 
+use depthTest and set it to false because it is defaulted to true.
 
 
 

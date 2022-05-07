@@ -31,7 +31,8 @@ const material = new THREE.MeshStandardMaterial({
     displacementMap: height,
     displacementScale: .6,
     alphaMap: alpha,
-    transparent: true
+    transparent: true,
+    depthTest: false
 })
 
 const plane = new THREE.Mesh(geometry, material);
