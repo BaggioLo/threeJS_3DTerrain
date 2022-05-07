@@ -27,7 +27,8 @@ const geometry = new THREE.PlaneBufferGeometry(3, 3, 64, 64);
 
 const material = new THREE.MeshStandardMaterial({
     color: 'gray',
-    map: texture
+    map: texture,
+    displacementMap: height
 })
 
 const plane = new THREE.Mesh(geometry, material);
