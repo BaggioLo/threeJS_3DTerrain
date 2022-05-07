@@ -47,7 +47,7 @@ gui.add(plane.rotation, 'x').min(0).max(600)
 
 // Lights
 
-const pointLight = new THREE.PointLight('#00b3ff', 3)
+const pointLight = new THREE.PointLight('#964b00', 3)
 pointLight.position.x = .2
 pointLight.position.y = 10
 pointLight.position.z = 4.4
@@ -106,7 +106,8 @@ scene.add(camera)
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    alpha: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -114,6 +115,14 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
+
+document.addEventListener('mousemove', animateTerrain)
+
+let mouseY = 0;
+
+function animateTerrain(event){
+    mouseY = event.clientY
+}
 
 const clock = new THREE.Clock()
 
@@ -126,6 +135,7 @@ const tick = () =>
     // sphere.rotation.y = .5 * elapsedTime
 
     plane.rotation.z = .5 * elapsedTime
+    plane.material.displacementScale = .3 + mouseY * 0.0008
 
     // Update Orbital Controls
     // controls.update()
