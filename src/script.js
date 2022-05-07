@@ -20,7 +20,7 @@ const geometry = new THREE.PlaneBufferGeometry(3, 3, 64, 64);
 // Materials
 
 const material = new THREE.MeshStandardMaterial({
-    color: 'red'
+    color: 'gray'
 })
 
 const plane = new THREE.Mesh(geometry, material);
@@ -35,11 +35,23 @@ gui.add(plane.rotation, 'x').min(0).max(600)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
+const pointLight = new THREE.PointLight(0xffffff, 2)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
+
+gui.add(pointLight.position, 'x')
+gui.add(pointLight.position, 'y')
+gui.add(pointLight.position, 'z')
+
+const col = {
+    color: '#00ff00'
+}
+
+gui.addColor(col, 'color').onChange(() => {
+    pointLight.color.set(col.color)
+})
 
 /**
  * Sizes
